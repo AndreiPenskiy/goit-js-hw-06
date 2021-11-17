@@ -18,6 +18,5 @@ function onFormSubmit(event) {
   });
 
     console.log(filledForm);
-    
     loginForm.reset();
 }
