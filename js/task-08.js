@@ -4,17 +4,17 @@ loginForm.addEventListener('submit', onFormSubmit);
 
 
 function onFormSubmit(event) {
-    event.preventDefault();
-
+  event.preventDefault();
+  
     if (event.currentTarget.elements.email.value === "" || event.currentTarget.elements.password.value === "") {
-        return alert("Все поля должны быть заполнены!");
+      return [alert("Все поля должны быть заполнены!"), loginForm.reset()]; 
     };
     
     const filledForm = {};
     const formData = new FormData(event.currentTarget);
 
   formData.forEach((value, name) => {
-    filledForm[name] = value;
+    filledForm[name] = value.trim();
   });
 
     console.log(filledForm);
